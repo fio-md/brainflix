@@ -15,10 +15,7 @@ const Header = () => {
           className="header__logo"
         />
       </div>
-      <div className="searchbar">
-        <img src={searchIcon} alt="" className="searchbar__icon" />
-        <input className="earchbar__input" type="search" placeholder="Search"></input>
-      </div>
+      <input className="searchbar" type="search" placeholder="Search"></input>
       <Avatar picture={avatarPic} />
       <Button buttonIcon={uploadIcon} buttonText="upload" />
     </header>

@@ -1,0 +1,54 @@
+@use "./mixins" as *;
+
+// Type Kit
+
+.page-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  @include tablet {
+    font-size: 33px;
+    line-height: 44px;
+    font-weight: 700;
+  }
+}
+.section-header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  @include tablet {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+}
+.subheader {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+  }
+}
+.body-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+}
+.labels-buttons {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+  @include tablet {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+}

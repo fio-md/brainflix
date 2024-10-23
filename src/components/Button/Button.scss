@@ -1,32 +1,31 @@
 @use "/src/styles/partials/variables" as *;
 @use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/global" as *;
 
 .button {
+  @extend .labels-buttons;
   background-color: $primary-highlight;
   border-radius: 4px;
   height: 2.5rem;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   transition: 0.4s;
   @include tablet {
     width: fit-content;
     min-width: 9.375rem;
+    padding: 0 0.5rem;
   }
   &:hover {
     background-color: $secondary-highlight;
   }
-  &__icon {
-    @include tablet {
-      padding-left: 2rem;
-    }
-  }
   &__text {
     text-transform: uppercase;
     color: $primary-white;
-    @include tablet {
-      padding-right: 2rem;
-    }
+    flex-grow: 1;
+  }
+  &__icon {
+    position: absolute;
+    height: 1.25rem;
   }
 }
