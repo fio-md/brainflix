@@ -1,0 +1,32 @@
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+
+.button {
+  background-color: $primary-highlight;
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  @include tablet {
+    width: fit-content;
+    min-width: 9.375rem;
+  }
+  &:hover {
+    background-color: $secondary-highlight;
+  }
+  &__icon {
+    @include tablet {
+      padding-left: 2rem;
+    }
+  }
+  &__text {
+    text-transform: uppercase;
+    color: $primary-white;
+    @include tablet {
+      padding-right: 2rem;
+    }
+  }
+}

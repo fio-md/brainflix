@@ -1,4 +1,9 @@
+@use "./styles/partials/reset" as *;
+@use "./styles/partials/typography" as *;
+
 #root {
+  font-family: "Avenir Next";
+  font-weight: 400;
   max-width: 1280px;
   margin: 0 auto;
 }

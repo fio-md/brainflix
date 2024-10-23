@@ -1,0 +1,23 @@
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+
+.avatar {
+  display: inline-block;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  background-color: $secondary-grey;
+  overflow: hidden;
+  @include tablet {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  &__picture {
+    height: 2.5rem;
+    position: relative;
+    left: -0.25rem;
+    @include tablet {
+      height: 2.75rem;
+    }
+  }
+}
