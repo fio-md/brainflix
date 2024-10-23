@@ -9,18 +9,12 @@
   align-items: center;
   align-content: center;
   gap: 0.5rem;
-  padding-left: $mobile-sides-padding;
-  padding-right: $mobile-sides-padding;
+  @extend .section-spacing;
+
   @include tablet {
     height: 4rem;
     flex-wrap: nowrap;
     gap: 1.5rem;
-    padding-left: $tablet-sides-padding;
-    padding-right: $tablet-sides-padding;
-  }
-  @include desktop {
-    padding-left: $desktop-sides-padding;
-    padding-right: $desktop-sides-padding;
   }
   &__logo-container {
     width: 100%;

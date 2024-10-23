@@ -1,6 +1,21 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+// Padding/margin
+
+.section-spacing {
+  padding-left: $mobile-sides-padding;
+  padding-right: $mobile-sides-padding;
+  @include tablet {
+    padding-left: $tablet-sides-padding;
+    padding-right: $tablet-sides-padding;
+  }
+  @include desktop {
+    padding-left: $desktop-sides-padding;
+    padding-right: $desktop-sides-padding;
+  }
+}
+
 // Type Kit
 
 .page-header {
@@ -22,17 +37,15 @@
   @include tablet {
     font-size: 12px;
     line-height: 20px;
-    font-weight: 700;
   }
 }
 .subheader {
   font-size: 13px;
   line-height: 18px;
-  font-weight: 700;
+  font-weight: 600;
   @include tablet {
     font-size: 14px;
     line-height: 22px;
-    font-weight: 700;
   }
 }
 .body-copy {
@@ -42,7 +55,6 @@
   @include tablet {
     font-size: 14px;
     line-height: 22px;
-    font-weight: 400;
   }
 }
 .labels-buttons {
@@ -53,6 +65,5 @@
   @include tablet {
     font-size: 12px;
     line-height: 20px;
-    font-weight: 600;
   }
 }

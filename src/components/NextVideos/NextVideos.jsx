@@ -7,7 +7,7 @@ const NextVideos = ({ otherVideos }) => {
       <h3 className="next__title">Next Videos</h3>
       <ul className="next__list">
         {otherVideos.map((video) => (
-          <NextVideoItem video={video} />
+          <NextVideoItem key={video.id} video={video} />
         ))}
       </ul>
     </section>

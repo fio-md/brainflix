@@ -1,3 +1,6 @@
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/mixins" as *;
+
 .next-video {
   display: flex;
   gap: 1rem;
@@ -5,10 +8,22 @@
   &__image {
     height: 3.5rem;
     border-radius: 4px;
+    @include tablet {
+      height: 4rem;
+    }
   }
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include tablet {
+      max-width: 12rem;
+    }
+  }
+  &__title {
+    @extend .subheader;
+  }
+  &__channel {
+    @extend .body-copy;
   }
 }

@@ -2,7 +2,7 @@ import "./NextVideoItem.scss";
 
 const NextVideoItem = ({ video }) => {
   return (
-    <li className="next-video" key={video.id}>
+    <li className="next-video">
       <img src={video.image} alt="" className="next-video__image" />
       <div className="next-video__container">
         <h4 className="next-video__title">{video.title}</h4>

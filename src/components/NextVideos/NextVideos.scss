@@ -3,8 +3,7 @@
 @use "/src/styles/partials/variables" as *;
 
 .next {
-  padding-left: $mobile-sides-padding;
-  padding-right: $mobile-sides-padding;
+  @extend .section-spacing;
   &__title {
     @extend .section-header;
   }
