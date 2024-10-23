@@ -1,0 +1,14 @@
+.next-video {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  &__image {
+    height: 3.5rem;
+    border-radius: 4px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

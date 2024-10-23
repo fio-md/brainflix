@@ -1,4 +1,5 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
 // Type Kit
 
@@ -15,7 +16,9 @@
 .section-header {
   font-size: 12px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $primary-grey;
   @include tablet {
     font-size: 12px;
     line-height: 20px;
@@ -46,6 +49,7 @@
   font-size: 12px;
   line-height: 20px;
   font-weight: 600;
+  text-transform: uppercase;
   @include tablet {
     font-size: 12px;
     line-height: 20px;
