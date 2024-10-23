@@ -4,7 +4,11 @@
 input,
 textarea {
   border: 1px solid $secondary-grey;
+  border-radius: 4px;
   background-color: $secondary-white;
+  &::placeholder {
+    color: $primary-dark;
+  }
 }
 
 // Padding/margin
@@ -66,7 +70,7 @@ textarea {
 .labels {
   font-size: 12px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   @include tablet {
     font-size: 12px;

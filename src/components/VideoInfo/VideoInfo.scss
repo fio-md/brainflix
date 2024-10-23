@@ -1,0 +1,52 @@
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/variables" as *;
+
+.info {
+  @extend .section-spacing;
+  &__summary {
+    padding: 0.75rem 0;
+    border-top: 1px solid $secondary-grey;
+    border-bottom: 1px solid $secondary-grey;
+    display: flex;
+    &-left,
+    &-right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+  &__title {
+    @extend .page-header;
+  }
+  &__channel {
+    @extend .subheader;
+  }
+  &__description {
+    @extend .body-copy;
+  }
+  &__views,
+  &__likes,
+  &__date {
+    @extend .labels;
+    font-weight: 400;
+    color: $primary-grey;
+  }
+  &__views {
+    display: flex;
+    &::before {
+      content: url("/src/assets/images/icons/views.svg");
+      padding-right: 0.5rem;
+    }
+  }
+  &__likes {
+    display: flex;
+    &::before {
+      content: url("/src/assets/images/icons/likes.svg");
+      padding-right: 0.5rem;
+    }
+  }
+  &__comment-count {
+    @extend .subheader;
+  }
+}
