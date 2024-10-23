@@ -1,6 +1,12 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+input,
+textarea {
+  border: 1px solid $secondary-grey;
+  background-color: $secondary-white;
+}
+
 // Padding/margin
 
 .section-spacing {
@@ -57,7 +63,17 @@
     line-height: 22px;
   }
 }
-.labels-buttons {
+.labels {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  @include tablet {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+.buttons {
   font-size: 12px;
   line-height: 20px;
   font-weight: 600;

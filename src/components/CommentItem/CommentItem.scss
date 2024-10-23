@@ -1,0 +1,31 @@
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+
+.comment {
+  border-bottom: 1px solid $secondary-grey;
+  padding: 0.75rem 0;
+  display: flex;
+  gap: 1rem;
+  .avatar {
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+  }
+  &__main {
+    flex-grow: 1;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    @extend .subheader;
+  }
+  &__timestamp {
+    color: $primary-grey;
+    @extend .labels;
+  }
+  &__content {
+    @extend .body-copy;
+  }
+}

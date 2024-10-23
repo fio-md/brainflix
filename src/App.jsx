@@ -13,8 +13,13 @@ function App() {
   return (
     <>
       <Header />
-      <ActiveVideo activeVideo={activeVideo} />
-      <NextVideos otherVideos={otherVideos} />
+      <main className="main">
+        <video className="main__video" controls poster={activeVideo.image}></video>
+        <div className="main__container">
+          <ActiveVideo activeVideo={activeVideo} />
+          <NextVideos otherVideos={otherVideos} />
+        </div>
+      </main>
     </>
   );
 }

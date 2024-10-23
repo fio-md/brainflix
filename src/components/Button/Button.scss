@@ -3,7 +3,7 @@
 @use "/src/styles/partials/global" as *;
 
 .button {
-  @extend .labels-buttons;
+  @extend .buttons;
   background-color: $primary-highlight;
   border-radius: 4px;
   height: 2.5rem;

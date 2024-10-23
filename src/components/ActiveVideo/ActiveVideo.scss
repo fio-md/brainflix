@@ -1,0 +1,9 @@
+@use "/src/styles/partials/global" as *;
+
+.info {
+  @extend .section-spacing;
+}
+
+.comments {
+  @extend .section-spacing;
+}

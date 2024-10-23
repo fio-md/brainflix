@@ -41,10 +41,9 @@
   }
 }
 .searchbar {
-  @extend .labels-buttons;
+  @extend .labels;
   flex-grow: 1;
   height: 2rem;
-  border: 1px solid $secondary-grey;
   border-radius: 4px;
   padding-left: 2rem;
   padding-right: 0.5rem;
@@ -54,6 +53,7 @@
   background-position: left;
   background-position-x: 0.5rem;
   margin-right: 0.5rem;
+  text-transform: capitalize;
   &::placeholder {
     font-weight: 400;
     color: $primary-dark;
