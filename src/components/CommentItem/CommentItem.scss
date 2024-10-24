@@ -24,6 +24,7 @@
     color: $primary-grey;
     @extend .labels;
     font-weight: 400;
+    text-transform: lowercase;
   }
   &__content {
     @extend .body-copy;

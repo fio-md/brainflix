@@ -7,13 +7,14 @@
   font-family: "Avenir Next";
   color: $primary-dark;
   font-weight: 400;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .main {
   &__video {
     width: 100%;
     background-color: black;
+    object-fit: contain;
   }
   &__container {
     display: flex;

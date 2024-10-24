@@ -54,6 +54,7 @@
     @extend .labels;
     font-weight: 400;
     color: $primary-grey;
+    text-transform: lowercase;
   }
   &__views {
     display: flex;
