@@ -7,6 +7,9 @@
   padding: 0.75rem 0;
   display: flex;
   gap: 1rem;
+  @include desktop {
+    padding-right: 1.5rem;
+  }
   &__main {
     flex-grow: 1;
   }
@@ -20,6 +23,7 @@
   &__timestamp {
     color: $primary-grey;
     @extend .labels;
+    font-weight: 400;
   }
   &__content {
     @extend .body-copy;

@@ -1,9 +1,11 @@
 @use "./styles/partials/reset" as *;
 @use "./styles/partials/typography" as *;
 @use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
 
 #root {
   font-family: "Avenir Next";
+  color: $primary-dark;
   font-weight: 400;
   max-width: 1280px;
   margin: 0 auto;
@@ -11,6 +13,7 @@
 .main {
   &__video {
     width: 100%;
+    background-color: black;
   }
   &__container {
     display: flex;

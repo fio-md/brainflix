@@ -8,21 +8,23 @@ import avatarPic from "/src/assets/images/Mohan-muruge.jpg";
 
 const ActiveVideo = ({ activeVideo }) => {
   return (
-    <>
+    <div className="active-video">
       <VideoInfo activeVideo={activeVideo} />
       <section className="comments">
         <form action="submit" className="form">
           <Avatar picture={avatarPic} />
           <div className="form__main">
-            <label htmlFor="comment" className="form__label">
-              join the conversation
-            </label>
-            <textarea
-              className="form__comment"
-              name="comment"
-              id="comment"
-              placeholder="Add a new comment"
-            ></textarea>
+            <div className="form__input">
+              <label htmlFor="comment" className="form__label">
+                join the conversation
+              </label>
+              <textarea
+                className="form__comment"
+                name="comment"
+                id="comment"
+                placeholder="Add a new comment"
+              ></textarea>
+            </div>
             <Button buttonIcon={commentIcon} buttonText="comment" />
           </div>
         </form>
@@ -32,7 +34,7 @@ const ActiveVideo = ({ activeVideo }) => {
           })}
         </ul>
       </section>
-    </>
+    </div>
   );
 };
 

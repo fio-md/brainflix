@@ -4,6 +4,11 @@
 
 .next {
   @extend .section-spacing;
+  margin-top: 1rem;
+  @include desktop {
+    padding-left: 1.5rem;
+    border-left: 1px solid $secondary-grey;
+  }
   &__title {
     @extend .section-header;
   }
