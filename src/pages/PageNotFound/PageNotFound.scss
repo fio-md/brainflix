@@ -1,0 +1,11 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/global" as *;
+
+.not-found {
+  height: 50vw;
+  margin: 2rem 0;
+  &__title {
+    @extend .page-header;
+    @extend .section-spacing;
+  }
+}

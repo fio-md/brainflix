@@ -1,7 +1,8 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import VideoDetails from "./pages/VideoDetails/VideoDetails";
-import VideoUpload from "./pages/VideoUpload";
+import VideoUpload from "./pages/VideoUpload/VideoUpload";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/" element={<VideoDetails videos={videos} />}></Route>
         <Route path="video/:videoId" element={<VideoDetails videos={videos} />}></Route>
         <Route path="upload" element={<VideoUpload />}></Route>
+        <Route path="/*" element={<PageNotFound />}></Route>
       </Routes>
     </BrowserRouter>
   );
