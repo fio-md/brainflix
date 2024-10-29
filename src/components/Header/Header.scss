@@ -31,6 +31,12 @@
     max-height: 1.5625rem;
     max-width: 7.5rem;
   }
+  &__upload-link {
+    width: 100%;
+    @include tablet {
+      width: auto;
+    }
+  }
   .avatar {
     @include tablet {
       order: 1;
@@ -43,8 +49,6 @@
 .searchbar {
   @extend .labels;
   flex-grow: 1;
-  height: 2rem;
-  border-radius: 4px;
   padding-left: 2rem;
   padding-right: 0.5rem;
   background-image: url("/src/assets/images/icons/search.svg");

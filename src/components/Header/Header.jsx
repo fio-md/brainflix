@@ -18,7 +18,9 @@ const Header = () => {
       </Link>
       <input className="searchbar" type="search" placeholder="Search"></input>
       <Avatar picture={avatarPic} />
-      <Button buttonIcon={uploadIcon} buttonText="upload" />
+      <Link to="/upload" className="header__upload-link">
+        <Button buttonIcon={uploadIcon} buttonText="upload" />
+      </Link>
     </header>
   );
 };

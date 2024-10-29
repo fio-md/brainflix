@@ -42,14 +42,4 @@
     @extend .labels;
     color: $primary-grey;
   }
-  &__comment {
-    width: 100%;
-    height: 6rem;
-    padding: 0.25rem;
-    @include tablet {
-      height: 2.5rem;
-      padding: 0.5rem;
-      display: flex;
-    }
-  }
 }
