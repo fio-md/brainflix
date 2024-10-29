@@ -10,6 +10,11 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 html,
 body,
 h1,

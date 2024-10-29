@@ -6,7 +6,7 @@ import "./ActiveVideo.scss";
 import commentIcon from "/src/assets/images/icons/add_comment.svg";
 import avatarPic from "/src/assets/images/Mohan-muruge.jpg";
 
-const ActiveVideo = ({ activeVideo }) => {
+const ActiveVideo = ({ currentVideo }) => {
   function timeAgo(timestamp) {
     const currentTime = Math.floor(Date.now() / 1000);
     const timestampSecs = timestamp / 1000;
@@ -30,15 +30,16 @@ const ActiveVideo = ({ activeVideo }) => {
       const months = Math.floor(secondsAgo / 2419200);
       return `${months} month${months !== 1 ? "s" : ""} ago`;
     } else {
-      // const years = Math.floor(secondsAgo / 29030400);
+      const years = Math.floor(secondsAgo / 29030400);
       return `over a year ago`;
     }
   }
+
   return (
     <div className="active-video">
       <VideoInfo
-        activeVideo={activeVideo}
-        dynamicTimestamp={timeAgo(activeVideo.timestamp)}
+        currentVideo={currentVideo}
+        dynamicTimestamp={timeAgo(currentVideo.timestamp)}
       />
       <section className="comments">
         <form action="submit" className="form">
@@ -59,7 +60,7 @@ const ActiveVideo = ({ activeVideo }) => {
           </div>
         </form>
         <ul className="comments__list">
-          {activeVideo.comments.map((comment) => {
+          {currentVideo.comments.map((comment) => {
             return (
               <CommentItem
                 key={comment.id}

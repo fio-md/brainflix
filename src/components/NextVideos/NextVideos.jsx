@@ -1,12 +1,12 @@
 import "./NextVideos.scss";
 import NextVideoItem from "../NextVideoItem/NextVideoItem";
 
-const NextVideos = ({ otherVideos }) => {
+const NextVideos = ({ nextVideos }) => {
   return (
     <section className="next">
       <h3 className="next__title">Next Videos</h3>
       <ul className="next__list">
-        {otherVideos.map((video) => (
+        {nextVideos.map((video) => (
           <NextVideoItem key={video.id} video={video} />
         ))}
       </ul>
