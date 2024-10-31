@@ -49,32 +49,42 @@
 .searchbar {
   @extend .labels;
   flex-grow: 1;
-  padding-left: 2rem;
-  padding-right: 0.5rem;
-  background-image: url("/src/assets/images/icons/search.svg");
-  background-repeat: no-repeat;
-  background-size: 1rem;
-  background-position: left;
-  background-position-x: 0.5rem;
   margin-right: 0.5rem;
-  text-transform: capitalize;
+  display: flex;
+  gap: 0.25rem;
+
   &::placeholder {
     font-weight: 400;
     color: $primary-dark;
   }
   @include tablet {
-    width: 15rem;
+    width: 18rem;
     flex-grow: 0;
-    height: 2.5rem;
-    background-position-x: 0.75rem;
-    background-size: 1.15rem;
-    padding-left: 2.25rem;
-    padding-right: 1rem;
     margin-right: 0;
   }
   @include desktop {
-    background-position-x: 1rem;
-    padding-left: 2.5rem;
-    padding-right: 1rem;
+    width: 20rem;
+  }
+  &__input {
+    flex-grow: 1;
+    padding: 0 1rem;
+  }
+  &__button {
+    background-color: $secondary-grey;
+    border-radius: 4px;
+    height: 2rem;
+    width: 2.5rem;
+    &:hover {
+      background-color: $primary-grey;
+      cursor: pointer;
+    }
+    @include tablet {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+  &__icon {
+    padding: 0 0.25rem;
+    height: 1rem;
   }
 }

@@ -1,9 +1,8 @@
 import "./Header.scss";
-import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
 import uploadIcon from "/src/assets/images/icons/upload.svg";
-import searchIcon from "/src/assets/images/icons/search.svg";
 import avatarPic from "/src/assets/images/Mohan-muruge.jpg";
+import searchIcon from "/src/assets/images/icons/search.svg";
 import { Link } from "react-router-dom";
 import Divider from "../Divider/Divider";
 
@@ -18,10 +17,23 @@ const Header = () => {
             className="header__logo"
           />
         </Link>
-        <input className="searchbar" type="search" placeholder="Search"></input>
+        <form action="" className="searchbar">
+          <input
+            className="searchbar__input"
+            name="search-input"
+            type="search"
+            placeholder="Search"
+          ></input>
+          <button className="searchbar__button">
+            <img src={searchIcon} alt="search icon" className="searchbar__icon" />
+          </button>
+        </form>
         <Avatar picture={avatarPic} />
         <Link to="/upload" className="header__upload-link">
-          <Button buttonIcon={uploadIcon} buttonText="upload" />
+          <div className="button">
+            <img src={uploadIcon} alt="" className="button__icon" />
+            <span className="button__text">Upload</span>
+          </div>
         </Link>
       </header>
       <Divider />

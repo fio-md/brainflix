@@ -34,5 +34,14 @@
   }
   &__content {
     @extend .body-copy;
+    padding: 0.25rem 0;
+  }
+  &__delete-button {
+    cursor: pointer;
+    width: 100%;
+    text-align: right;
+  }
+  &__delete-icon {
+    height: 1.2rem;
   }
 }

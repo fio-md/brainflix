@@ -1,6 +1,6 @@
 import CommentItem from "../CommentItem/CommentItem";
 
-const CommentList = ({ commentList, timeAgo }) => {
+const CommentList = ({ commentList, timeAgo, deleteComment }) => {
   const sortedComments = commentList.sort((a, b) => b.timestamp - a.timestamp);
   return (
     <ul className="comments__list">
@@ -10,6 +10,7 @@ const CommentList = ({ commentList, timeAgo }) => {
             key={comment.id}
             comment={comment}
             dynamicTimestamp={timeAgo(comment.timestamp)}
+            deleteComment={deleteComment}
           />
         );
       })}

@@ -58,6 +58,10 @@ const ActiveVideo = ({ currentVideo, fetchVideoDetails }) => {
     fetchVideoDetails();
   };
 
+  const deleteComment = async (commentId) => {
+    const result = await API.deleteComment({ videoId: currentVideo.id, commentId });
+  };
+
   return (
     <div className="active-video">
       <VideoInfo
@@ -85,7 +89,11 @@ const ActiveVideo = ({ currentVideo, fetchVideoDetails }) => {
           </div>
         </form>
         <Divider />
-        <CommentList commentList={currentVideo.comments} timeAgo={timeAgo} />
+        <CommentList
+          commentList={currentVideo.comments}
+          timeAgo={timeAgo}
+          deleteComment={deleteComment}
+        />
       </section>
     </div>
   );

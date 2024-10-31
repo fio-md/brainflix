@@ -23,7 +23,6 @@ const getOneVideo = async (id) => {
 
 const postComment = async ({ id, comment }) => {
   try {
-    console.log("comment: " + comment);
     const response = await axios.post(
       `${baseUrl}videos/${id}/comments/?api_key=${apiKey}`,
       comment
@@ -34,4 +33,15 @@ const postComment = async ({ id, comment }) => {
   }
 };
 
-export { getAllVideos, getOneVideo, postComment };
+const deleteComment = async ({ videoId, commentId }) => {
+  try {
+    const response = await axios.delete(
+      `${baseUrl}videos/${videoId}/comments/${commentId}/?api_key=${apiKey}`
+    );
+    return response.data;
+  } catch (e) {
+    console.error(`Error deleting comment with id ${commentId}`);
+  }
+};
+
+export { getAllVideos, getOneVideo, postComment, deleteComment };
