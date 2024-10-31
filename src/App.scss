@@ -2,6 +2,7 @@
 @use "./styles/partials/typography" as *;
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
+@use "./styles/partials/global" as *;
 
 #root {
   font-family: "Avenir Next";
@@ -9,4 +10,8 @@
   font-weight: 400;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.loading {
+  @extend .subheader;
 }

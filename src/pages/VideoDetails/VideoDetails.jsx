@@ -2,11 +2,12 @@ import ActiveVideo from "../../components/ActiveVideo/ActiveVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import * as API from "../../utils/apiCalls";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./VideoDetails.scss";
 
 const VideoDetails = ({ videos }) => {
   const [currentVideo, setCurrentVideo] = useState(null);
+  const navigate = useNavigate();
   let { videoId } = useParams();
 
   if (!videoId) {
@@ -19,11 +20,15 @@ const VideoDetails = ({ videos }) => {
 
   const fetchVideoDetails = async () => {
     const vidDetails = await API.getOneVideo(videoId);
+    if (!vidDetails) {
+      alert(`No videos match the id ${videoId}`);
+      navigate("/");
+    }
     setCurrentVideo(vidDetails);
   };
 
   if (!currentVideo) {
-    return <>Loading current video...</>;
+    return <span className="loading">Loading video details...</span>;
   }
 
   const nextVideos = videos.filter((video) => video.id !== currentVideo.id);

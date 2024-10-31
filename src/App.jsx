@@ -20,7 +20,7 @@ function App() {
   }
 
   if (!videos.length) {
-    return <>Loading data...</>;
+    return <span className="loading">Loading data...</span>;
   }
 
   return (

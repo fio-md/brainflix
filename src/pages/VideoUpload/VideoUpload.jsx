@@ -3,13 +3,22 @@ import Button from "../../components/Button/Button";
 import publishButton from "../../assets/images/icons/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import Divider from "../../components/Divider/Divider";
+import { useNavigate } from "react-router-dom";
 
 const VideoUpload = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Form submitted!");
+    navigate("/");
+  };
+
   return (
     <section className="upload">
       <h1 className="upload__title">Upload Video</h1>
       <Divider newClass="mobile-hidden" />
-      <form action="submit" className="upload__form">
+      <form action="submit" className="upload__form" onSubmit={handleSubmit}>
         <div className="upload__form-container">
           <label htmlFor="thumbnail" className="upload__label">
             Video Thumbnail
