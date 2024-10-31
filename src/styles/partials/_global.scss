@@ -32,6 +32,8 @@ textarea {
 .section-spacing {
   padding-left: $mobile-sides-padding;
   padding-right: $mobile-sides-padding;
+  // padding-top: $mobile-between-components;
+  // padding-bottom: $mobile-between-components;
   @include tablet {
     padding-left: $tablet-sides-padding;
     padding-right: $tablet-sides-padding;
@@ -48,10 +50,12 @@ textarea {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
+  padding: $mobile-before-headline 0 $mobile-after-headlines 0;
   @include tablet {
     font-size: 33px;
     line-height: 44px;
     font-weight: 700;
+    padding: $tablet-before-headline 0 $tablet-after-headlines 0;
   }
 }
 .section-header {
@@ -60,9 +64,11 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   color: $primary-grey;
+  padding: $mobile-before-headline 0 $mobile-after-headlines 0;
   @include tablet {
     font-size: 12px;
     line-height: 20px;
+    padding: 1.5rem 0 $tablet-after-headlines 0;
   }
 }
 .subheader {

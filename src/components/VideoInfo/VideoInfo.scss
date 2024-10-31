@@ -4,14 +4,10 @@
 
 .info {
   &__summary {
-    padding: 0.75rem 0;
-    border-top: 1px solid $secondary-grey;
-    border-bottom: 1px solid $secondary-grey;
     display: flex;
-    margin: 1rem 0;
+    padding: $mobile-between-components 0;
     @include tablet {
-      border-top: none;
-      margin-top: 0;
+      padding-top: 0;
       padding-bottom: 0.5rem;
     }
     @include desktop {
@@ -36,14 +32,13 @@
   }
   &__title {
     @extend .page-header;
-    margin-top: 1rem;
   }
   &__channel {
     @extend .subheader;
   }
   &__description {
     @extend .body-copy;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     @include desktop {
       padding-right: 1.5rem;
     }
@@ -72,5 +67,10 @@
   }
   &__comment-count {
     @extend .subheader;
+  }
+}
+.tablet-hidden {
+  @include tablet {
+    display: none;
   }
 }

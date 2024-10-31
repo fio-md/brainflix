@@ -3,10 +3,16 @@
 @use "/src/styles/partials/mixins" as *;
 
 .comment {
-  border-bottom: 1px solid $secondary-grey;
+  // border-bottom: 1px solid $secondary-grey;
   padding: 0.75rem 0;
   display: flex;
   gap: 1rem;
+  &:last-child {
+    border-bottom: none;
+  }
+  @include tablet {
+    padding: $tablet-between-components 0;
+  }
   @include desktop {
     padding-right: 1.5rem;
   }

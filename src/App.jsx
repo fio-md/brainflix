@@ -4,11 +4,8 @@ import VideoDetails from "./pages/VideoDetails/VideoDetails";
 import VideoUpload from "./pages/VideoUpload/VideoUpload";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import * as API from "./utils/apiCalls";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-const apiKey = "8a82812e-7218-418d-a5ca-60255dc60063";
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -17,14 +14,10 @@ function App() {
     fetchVideos();
   }, []);
 
-  const fetchVideos = async () => {
-    try {
-      const response = await axios.get(`${baseUrl}videos/?api_key=${apiKey}`);
-      setVideos(response.data);
-    } catch (e) {
-      console.error("Error fetching video array: " + e);
-    }
-  };
+  async function fetchVideos() {
+    const vidArray = await API.getAllVideos();
+    setVideos(vidArray);
+  }
 
   if (!videos.length) {
     return <>Loading data...</>;

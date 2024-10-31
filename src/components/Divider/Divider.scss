@@ -1,0 +1,7 @@
+@use "/src/styles/partials/variables" as *;
+
+.divider {
+  border: none;
+  margin: 0;
+  border-bottom: 1px solid $secondary-grey;
+}

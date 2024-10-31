@@ -1,12 +1,9 @@
 import ActiveVideo from "../../components/ActiveVideo/ActiveVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
-import axios from "axios";
+import * as API from "../../utils/apiCalls";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./VideoDetails.scss";
-
-const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-const apiKey = "8a82812e-7218-418d-a5ca-60255dc60063";
 
 const VideoDetails = ({ videos }) => {
   const [currentVideo, setCurrentVideo] = useState(null);
@@ -18,15 +15,11 @@ const VideoDetails = ({ videos }) => {
 
   useEffect(() => {
     fetchVideoDetails();
-  }, [videoId]);
+  }, [videoId, currentVideo]);
 
   const fetchVideoDetails = async () => {
-    try {
-      const response = await axios.get(`${baseUrl}videos/${videoId}/?api_key=${apiKey}`);
-      setCurrentVideo(response.data);
-    } catch (e) {
-      console.error("Error fetching video details: " + e);
-    }
+    const vidDetails = await API.getOneVideo(videoId);
+    setCurrentVideo(vidDetails);
   };
 
   if (!currentVideo) {
@@ -42,7 +35,10 @@ const VideoDetails = ({ videos }) => {
           <video className="main__video" controls poster={currentVideo.image}></video>
         </div>
         <div className="main__container">
-          <ActiveVideo currentVideo={currentVideo} />
+          <ActiveVideo
+            currentVideo={currentVideo}
+            fetchVideoDetails={fetchVideoDetails}
+          />
           <NextVideos nextVideos={nextVideos} />
         </div>
       </main>
