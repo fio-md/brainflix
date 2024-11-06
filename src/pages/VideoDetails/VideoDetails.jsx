@@ -20,10 +20,6 @@ const VideoDetails = ({ videos }) => {
 
   const fetchVideoDetails = async () => {
     const vidDetails = await API.getOneVideo(videoId);
-    if (!vidDetails) {
-      alert(`No videos match the id ${videoId}`);
-      navigate("/");
-    }
     setCurrentVideo(vidDetails);
   };
 

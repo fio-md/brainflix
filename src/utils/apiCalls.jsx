@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
-const apiKey = "8a82812e-7218-418d-a5ca-60255dc60063";
+const baseUrl = import.meta.env.VITE_API_URL;
 
 const getAllVideos = async () => {
   try {
-    const response = await axios.get(`${baseUrl}videos/?api_key=${apiKey}`);
+    const response = await axios.get(`${baseUrl}videos`);
     return response.data;
   } catch (e) {
     console.error("Error fetching video array: " + e);
@@ -14,7 +13,7 @@ const getAllVideos = async () => {
 
 const getOneVideo = async (id) => {
   try {
-    const response = await axios.get(`${baseUrl}videos/${id}/?api_key=${apiKey}`);
+    const response = await axios.get(`${baseUrl}videos/${id}`);
     return response.data;
   } catch (e) {
     console.error("Error fetching video details: " + e);
@@ -23,10 +22,7 @@ const getOneVideo = async (id) => {
 
 const postComment = async ({ id, comment }) => {
   try {
-    const response = await axios.post(
-      `${baseUrl}videos/${id}/comments/?api_key=${apiKey}`,
-      comment
-    );
+    const response = await axios.post(`${baseUrl}videos/${id}/comments`, comment);
     return response.data;
   } catch (e) {
     console.error("Error posting comment: " + e);
@@ -36,7 +32,7 @@ const postComment = async ({ id, comment }) => {
 const deleteComment = async ({ videoId, commentId }) => {
   try {
     const response = await axios.delete(
-      `${baseUrl}videos/${videoId}/comments/${commentId}/?api_key=${apiKey}`
+      `${baseUrl}videos/${videoId}/comments/${commentId}`
     );
     return response.data;
   } catch (e) {
@@ -44,4 +40,13 @@ const deleteComment = async ({ videoId, commentId }) => {
   }
 };
 
-export { getAllVideos, getOneVideo, postComment, deleteComment };
+const postVideo = async (newVid) => {
+  try {
+    const response = await axios.post(`${baseUrl}videos`, newVid);
+    return response.data;
+  } catch (e) {
+    console.error(`Error adding video ${newVid}`);
+  }
+};
+
+export { getAllVideos, getOneVideo, postComment, deleteComment, postVideo };

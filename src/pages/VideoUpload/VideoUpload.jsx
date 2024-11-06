@@ -3,15 +3,34 @@ import Button from "../../components/Button/Button";
 import publishButton from "../../assets/images/icons/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import Divider from "../../components/Divider/Divider";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { postVideo } from "../../utils/apiCalls";
 
-const VideoUpload = () => {
+const VideoUpload = ({ fetchVideos }) => {
   const navigate = useNavigate();
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newVid = { title, description, image: "https://placecats.com/800/500" };
+    uploadVideo(newVid);
     alert("Form submitted!");
     navigate("/");
+  };
+
+  const uploadVideo = async (video) => {
+    await postVideo(video);
+    fetchVideos();
+  };
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
   };
 
   return (
@@ -34,8 +53,10 @@ const VideoUpload = () => {
               type="text"
               name="title"
               id="title"
+              value={title}
               className="upload__form-title"
               placeholder="Add a title to your video"
+              onChange={handleTitleChange}
             />
           </div>
           <div className="upload__form-container">
@@ -46,8 +67,10 @@ const VideoUpload = () => {
               type="text"
               name="description"
               id="description"
+              value={description}
               className="upload__input"
               placeholder="Add a description to your video"
+              onChange={handleDescriptionChange}
             ></textarea>
           </div>
         </div>
