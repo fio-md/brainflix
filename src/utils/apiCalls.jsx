@@ -49,4 +49,4 @@ const postVideo = async (newVid) => {
   }
 };
 
-export { getAllVideos, getOneVideo, postComment, deleteComment, postVideo };
+export { baseUrl, getAllVideos, getOneVideo, postComment, deleteComment, postVideo };

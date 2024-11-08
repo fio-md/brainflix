@@ -33,7 +33,11 @@ const VideoDetails = ({ videos }) => {
     <>
       <main className="main">
         <div className="main__video-container">
-          <video className="main__video" controls poster={currentVideo.image}></video>
+          <video
+            className="main__video"
+            controls
+            poster={`${API.baseUrl}${currentVideo.image}`}
+          ></video>
         </div>
         <div className="main__container">
           <ActiveVideo
