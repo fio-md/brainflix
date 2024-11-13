@@ -27,7 +27,7 @@ const UploadForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newVid = { title, description, image: "https://placecats.com/800/500" };
+    const newVid = { title, description, image: "./images/upload-image.jpg" };
     uploadVideo(newVid);
     alert("Form submitted!");
     navigate("/");
