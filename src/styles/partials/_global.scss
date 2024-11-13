@@ -9,6 +9,9 @@ textarea {
   &::placeholder {
     color: $primary-dark;
   }
+  &:focus-visible {
+    border: 3px solid $primary-highlight;
+  }
 }
 input {
   height: 2rem;
@@ -32,8 +35,6 @@ textarea {
 .section-spacing {
   padding-left: $mobile-sides-padding;
   padding-right: $mobile-sides-padding;
-  // padding-top: $mobile-between-components;
-  // padding-bottom: $mobile-between-components;
   @include tablet {
     padding-left: $tablet-sides-padding;
     padding-right: $tablet-sides-padding;

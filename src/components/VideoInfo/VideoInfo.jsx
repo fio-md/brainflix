@@ -1,7 +1,7 @@
 import "./VideoInfo.scss";
 import Divider from "../Divider/Divider";
 
-const VideoInfo = ({ currentVideo, dynamicTimestamp }) => {
+const VideoInfo = ({ currentVideo, timestamp }) => {
   return (
     <section className="info">
       <h1 className="info__title">{currentVideo.title}</h1>
@@ -9,7 +9,7 @@ const VideoInfo = ({ currentVideo, dynamicTimestamp }) => {
       <div className="info__summary">
         <div className="info__summary-left">
           <h4 className="info__channel">{`By ${currentVideo.channel}`}</h4>
-          <span className="info__date">{dynamicTimestamp}</span>
+          <span className="info__date">{timestamp}</span>
         </div>
         <div className="info__summary-right">
           <div className="info__views">{currentVideo.views}</div>

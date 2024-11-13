@@ -7,7 +7,6 @@ import "./VideoDetails.scss";
 
 const VideoDetails = ({ videos }) => {
   const [currentVideo, setCurrentVideo] = useState(null);
-  const navigate = useNavigate();
   let { videoId } = useParams();
 
   if (!videoId) {

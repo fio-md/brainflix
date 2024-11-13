@@ -42,4 +42,7 @@ textarea {
   &::placeholder {
     font-family: inherit;
   }
+  &:focus-visible {
+    outline-color: transparent;
+  }
 }
