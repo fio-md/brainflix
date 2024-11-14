@@ -41,6 +41,7 @@ const CommentForm = ({ currentVideo, fetchVideoDetails }) => {
             placeholder="Add a new comment"
             value={comment}
             onChange={handleCommentChange}
+            required
           ></textarea>
         </div>
         <Button buttonIcon={commentIcon} buttonText="comment" />

@@ -29,7 +29,7 @@ const UploadForm = () => {
     e.preventDefault();
     const newVid = { title, description, image: "./images/upload-image.jpg" };
     uploadVideo(newVid);
-    alert("Form submitted!");
+    alert("Video Uploaded!");
     navigate("/");
   };
 
@@ -54,6 +54,7 @@ const UploadForm = () => {
             className="upload__form-title"
             placeholder="Add a title to your video"
             onChange={handleTitleChange}
+            required
           />
         </div>
         <div className="upload__form-container">
@@ -68,6 +69,7 @@ const UploadForm = () => {
             className="upload__input"
             placeholder="Add a description to your video"
             onChange={handleDescriptionChange}
+            required
           ></textarea>
         </div>
       </div>

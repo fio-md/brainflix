@@ -29,11 +29,9 @@ const Header = () => {
           </button>
         </form>
         <Avatar picture={avatarPic} />
-        <Link to="/upload" className="header__upload-link">
-          <div className="button">
-            <img src={uploadIcon} alt="" className="button__icon" />
-            <span className="button__text">Upload</span>
-          </div>
+        <Link to="/upload" className="button">
+          <img src={uploadIcon} alt="" className="button__icon" />
+          <span className="button__text">Upload</span>
         </Link>
       </header>
       <Divider />

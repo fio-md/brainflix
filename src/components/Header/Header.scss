@@ -31,10 +31,9 @@
     max-height: 1.5625rem;
     max-width: 7.5rem;
   }
-  &__upload-link {
-    width: 100%;
-    @include tablet {
-      width: auto;
+  .button {
+    &__icon {
+      padding-left: 0.25rem;
     }
   }
   .avatar {
@@ -51,7 +50,6 @@
   flex-grow: 1;
   margin-right: 0.5rem;
   display: flex;
-  // gap: 0.25rem;
 
   &::placeholder {
     font-weight: 400;
