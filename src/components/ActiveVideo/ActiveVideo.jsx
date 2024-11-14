@@ -11,7 +11,11 @@ const ActiveVideo = ({ currentVideo, fetchVideoDetails }) => {
       <CommentForm currentVideo={currentVideo} fetchVideoDetails={fetchVideoDetails} />
       <section className="comments">
         <Divider />
-        <CommentList currentId={currentVideo.id} commentList={currentVideo.comments} />
+        <CommentList
+          currentId={currentVideo.id}
+          commentList={currentVideo.comments}
+          fetchVideoDetails={fetchVideoDetails}
+        />
       </section>
     </div>
   );

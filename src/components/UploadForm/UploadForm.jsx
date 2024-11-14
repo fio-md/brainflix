@@ -15,7 +15,6 @@ const UploadForm = () => {
 
   const uploadVideo = async (video) => {
     await postVideo(video);
-    fetchVideos();
   };
 
   const handleTitleChange = (e) => {

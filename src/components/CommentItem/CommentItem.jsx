@@ -5,10 +5,11 @@ import deleteIcon from "../../assets/images/icons/delete.svg";
 import { timeAgo } from "../../utils/utils";
 import * as API from "../../utils/apiCalls";
 
-const CommentItem = ({ currentId, comment, timestamp }) => {
+const CommentItem = ({ currentId, comment, timestamp, fetchVideoDetails }) => {
   const handleDelete = (event) => {
     event.preventDefault();
     API.deleteComment({ videoId: currentId, commentId: comment.id });
+    fetchVideoDetails();
   };
 
   return (

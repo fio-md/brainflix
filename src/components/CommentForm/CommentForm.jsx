@@ -21,7 +21,7 @@ const CommentForm = ({ currentVideo, fetchVideoDetails }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const commentObj = { name: "Anonymous", comment };
+    const commentObj = { name: "Fiorella", comment };
     setComment("");
     postMyComment(commentObj);
   };

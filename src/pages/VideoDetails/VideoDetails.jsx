@@ -2,27 +2,39 @@ import ActiveVideo from "../../components/ActiveVideo/ActiveVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import * as API from "../../utils/apiCalls";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./VideoDetails.scss";
 
-const VideoDetails = ({ videos }) => {
-  const [currentVideo, setCurrentVideo] = useState(null);
+const VideoDetails = () => {
   let { videoId } = useParams();
 
-  if (!videoId) {
-    videoId = videos[0].id;
-  }
+  const [videos, setVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState(null);
 
   useEffect(() => {
-    fetchVideoDetails();
-  }, [videoId, currentVideo]);
+    fetchVideos();
+  }, []);
+
+  useEffect(() => {
+    if (videos.length) {
+      if (!videoId) {
+        videoId = videos[0].id;
+      }
+      fetchVideoDetails();
+    }
+  }, [videoId, videos]);
+
+  async function fetchVideos() {
+    const vidArray = await API.getAllVideos();
+    setVideos(vidArray);
+  }
 
   const fetchVideoDetails = async () => {
     const vidDetails = await API.getOneVideo(videoId);
     setCurrentVideo(vidDetails);
   };
 
-  if (!currentVideo) {
+  if (!videos.length || !currentVideo) {
     return <span className="loading">Loading video details...</span>;
   }
 
