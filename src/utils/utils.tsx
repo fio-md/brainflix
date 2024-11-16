@@ -1,4 +1,4 @@
-const timeAgo = (timestamp) => {
+const timeAgo = (timestamp: number): string => {
   const currentTime = Math.floor(Date.now() / 1000);
   const timestampSecs = Math.floor(timestamp / 1000);
   const secondsAgo = currentTime - timestampSecs;

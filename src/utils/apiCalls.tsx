@@ -11,7 +11,7 @@ const getAllVideos = async () => {
   }
 };
 
-const getOneVideo = async (id) => {
+const getOneVideo = async (id: string) => {
   try {
     const response = await axios.get(`${baseUrl}videos/${id}`);
     return response.data;
@@ -20,7 +20,12 @@ const getOneVideo = async (id) => {
   }
 };
 
-const postComment = async ({ id, comment }) => {
+type PostComment = {
+  id: string;
+  comment: string;
+};
+
+const postComment = async ({ id, comment }: PostComment) => {
   try {
     const response = await axios.post(
       `${baseUrl}videos/${id}/comments`,
@@ -32,7 +37,12 @@ const postComment = async ({ id, comment }) => {
   }
 };
 
-const deleteComment = async ({ videoId, commentId }) => {
+type DeleteComment = {
+  videoId: string;
+  commentId: string;
+};
+
+const deleteComment = async ({ videoId, commentId }: DeleteComment) => {
   try {
     const response = await axios.delete(
       `${baseUrl}videos/${videoId}/comments/${commentId}`
@@ -43,7 +53,13 @@ const deleteComment = async ({ videoId, commentId }) => {
   }
 };
 
-const postVideo = async (newVid) => {
+type PostVideo = {
+  name: string;
+  description: string;
+  image: string;
+};
+
+const postVideo = async (newVid: PostVideo) => {
   try {
     const response = await axios.post(`${baseUrl}videos`, newVid);
     return response.data;
