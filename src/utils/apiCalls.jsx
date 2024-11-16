@@ -22,7 +22,10 @@ const getOneVideo = async (id) => {
 
 const postComment = async ({ id, comment }) => {
   try {
-    const response = await axios.post(`${baseUrl}videos/${id}/comments`, comment);
+    const response = await axios.post(
+      `${baseUrl}videos/${id}/comments`,
+      comment
+    );
     return response.data;
   } catch (e) {
     console.error("Error posting comment: " + e);
@@ -49,4 +52,11 @@ const postVideo = async (newVid) => {
   }
 };
 
-export { baseUrl, getAllVideos, getOneVideo, postComment, deleteComment, postVideo };
+export {
+  baseUrl,
+  getAllVideos,
+  getOneVideo,
+  postComment,
+  deleteComment,
+  postVideo,
+};

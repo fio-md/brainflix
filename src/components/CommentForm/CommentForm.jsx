@@ -6,13 +6,15 @@ import { useState } from "react";
 import * as API from "/src/utils/apiCalls";
 import "./CommentForm.scss";
 
-const CommentForm = ({ currentVideo, fetchVideoDetails }) => {
+const CommentForm = ({ currentVideo, fetchVideos }) => {
   const [comment, setComment] = useState("");
 
   const postMyComment = async (commentObj) => {
-    const result = await API.postComment({ id: currentVideo.id, comment: commentObj });
-    console.log(result);
-    fetchVideoDetails();
+    const result = await API.postComment({
+      id: currentVideo.id,
+      comment: commentObj,
+    });
+    fetchVideos();
   };
 
   const handleCommentChange = (event) => {

@@ -51,10 +51,7 @@ const VideoDetails = () => {
           ></video>
         </div>
         <div className="main__container">
-          <ActiveVideo
-            currentVideo={currentVideo}
-            fetchVideoDetails={fetchVideoDetails}
-          />
+          <ActiveVideo currentVideo={currentVideo} fetchVideos={fetchVideos} />
           <NextVideos nextVideos={nextVideos} />
         </div>
       </main>

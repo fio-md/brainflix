@@ -35,10 +35,13 @@ const UploadForm = () => {
   return (
     <form action="submit" className="upload__form" onSubmit={handleSubmit}>
       <div className="upload__form-container">
-        <label htmlFor="thumbnail" className="upload__label">
-          Video Thumbnail
-        </label>
-        <img src={uploadPreview} alt="" className="upload__thumbnail" />
+        <span className="upload__label">Video Thumbnail</span>
+        <img
+          src={uploadPreview}
+          id="thumbnail"
+          alt=""
+          className="upload__thumbnail"
+        />
       </div>
       <div className="upload__desktop-container">
         <div className="upload__form-container">

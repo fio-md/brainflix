@@ -1,6 +1,6 @@
 import CommentItem from "../CommentItem/CommentItem";
 
-const CommentList = ({ currentId, commentList, fetchVideoDetails }) => {
+const CommentList = ({ currentId, commentList, fetchVideos }) => {
   const sortedComments = commentList.sort((a, b) => b.timestamp - a.timestamp);
 
   return (
@@ -12,7 +12,7 @@ const CommentList = ({ currentId, commentList, fetchVideoDetails }) => {
             comment={comment}
             timestamp={comment.timestamp}
             currentId={currentId}
-            fetchVideoDetails={fetchVideoDetails}
+            fetchVideos={fetchVideos}
           />
         );
       })}
