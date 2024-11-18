@@ -1,8 +1,9 @@
-import Button from "../../components/Button/Button";
+import Button from "../Button/Button";
 import publishButton from "../../assets/images/icons/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
-import Divider from "../../components/Divider/Divider";
+import Divider from "../Divider/Divider";
 import { postVideo } from "../../utils/apiCalls";
+import { PostVideo } from "../../utils/interfaces";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UploadForm.scss";
@@ -10,21 +11,23 @@ import "./UploadForm.scss";
 const UploadForm = () => {
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
 
-  const uploadVideo = async (video) => {
+  const uploadVideo = async (video: PostVideo) => {
     await postVideo(video);
   };
 
-  const handleTitleChange = (e) => {
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
-  const handleDescriptionChange = (e) => {
+  const handleDescriptionChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setDescription(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
     const newVid = { title, description, image: "./images/upload-image.jpg" };
     uploadVideo(newVid);
@@ -64,7 +67,6 @@ const UploadForm = () => {
             Add a Video Description
           </label>
           <textarea
-            type="text"
             name="description"
             id="description"
             value={description}

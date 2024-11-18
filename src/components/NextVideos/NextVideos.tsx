@@ -1,8 +1,9 @@
 import "./NextVideos.scss";
 import NextVideoItem from "../NextVideoItem/NextVideoItem";
 import Divider from "../Divider/Divider";
+import { Video } from "../../utils/interfaces";
 
-const NextVideos = ({ nextVideos }) => {
+const NextVideos = ({ nextVideos }: { nextVideos: Video[] }) => {
   return (
     <>
       <Divider newClass="desktop-only" />

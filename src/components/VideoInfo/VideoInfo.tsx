@@ -1,7 +1,14 @@
 import "./VideoInfo.scss";
 import Divider from "../Divider/Divider";
+import { Comment, VideoDetail } from "../../utils/interfaces";
 
-const VideoInfo = ({ currentVideo, timestamp }) => {
+const VideoInfo = ({
+  currentVideo,
+  timestamp,
+}: {
+  currentVideo: VideoDetail;
+  timestamp: number;
+}) => {
   return (
     <section className="info">
       <h1 className="info__title">{currentVideo.title}</h1>
@@ -18,7 +25,9 @@ const VideoInfo = ({ currentVideo, timestamp }) => {
       </div>
       <Divider />
       <p className="info__description">{currentVideo.description}</p>
-      <span className="info__comment-count">{currentVideo.comments.length} comments</span>
+      <span className="info__comment-count">
+        {currentVideo.comments.length} comments
+      </span>
     </section>
   );
 };

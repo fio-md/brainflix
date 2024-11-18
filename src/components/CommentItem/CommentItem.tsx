@@ -4,9 +4,22 @@ import Divider from "../Divider/Divider";
 import deleteIcon from "../../assets/images/icons/delete.svg";
 import { timeAgo } from "../../utils/utils";
 import * as API from "../../utils/apiCalls";
+import { Comment } from "../../utils/interfaces";
 
-const CommentItem = ({ currentId, comment, timestamp, fetchVideos }) => {
-  const handleDelete = (event) => {
+interface CommentProps {
+  currentId: string;
+  comment: Comment;
+  timestamp: number;
+  fetchVideos: Function;
+}
+
+const CommentItem = ({
+  currentId,
+  comment,
+  timestamp,
+  fetchVideos,
+}: CommentProps) => {
+  const handleDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     API.deleteComment({ videoId: currentId, commentId: comment.id });
     fetchVideos();

@@ -3,8 +3,15 @@ import "./ActiveVideo.scss";
 import Divider from "../Divider/Divider";
 import CommentList from "../CommentList/CommentList";
 import CommentForm from "../CommentForm/CommentForm";
+import { VideoDetail } from "../../utils/interfaces";
 
-const ActiveVideo = ({ currentVideo, fetchVideos }) => {
+const ActiveVideo = ({
+  currentVideo,
+  fetchVideos,
+}: {
+  currentVideo: VideoDetail;
+  fetchVideos: Function;
+}) => {
   return (
     <div className="active-video">
       <VideoInfo

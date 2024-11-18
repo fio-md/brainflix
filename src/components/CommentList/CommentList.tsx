@@ -1,6 +1,17 @@
 import CommentItem from "../CommentItem/CommentItem";
+import { Comment } from "../../utils/interfaces";
 
-const CommentList = ({ currentId, commentList, fetchVideos }) => {
+interface CommentListProps {
+  currentId: string;
+  commentList: Comment[];
+  fetchVideos: Function;
+}
+
+const CommentList = ({
+  currentId,
+  commentList,
+  fetchVideos,
+}: CommentListProps) => {
   const sortedComments = commentList.sort((a, b) => b.timestamp - a.timestamp);
 
   return (

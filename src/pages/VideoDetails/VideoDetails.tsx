@@ -4,12 +4,13 @@ import * as API from "../../utils/apiCalls";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./VideoDetails.scss";
+import { Video, VideoDetail } from "../../utils/interfaces";
 
 const VideoDetails = () => {
   let { videoId } = useParams();
 
-  const [videos, setVideos] = useState([]);
-  const [currentVideo, setCurrentVideo] = useState(null);
+  const [videos, setVideos] = useState<Video[] | []>([]);
+  const [currentVideo, setCurrentVideo] = useState<VideoDetail | null>(null);
 
   useEffect(() => {
     fetchVideos();

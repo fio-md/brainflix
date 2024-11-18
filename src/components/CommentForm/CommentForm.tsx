@@ -3,27 +3,36 @@ import Avatar from "../Avatar/Avatar";
 import commentIcon from "/src/assets/images/icons/add_comment.svg";
 import avatarPic from "/src/assets/images/Mohan-muruge.jpg";
 import { useState } from "react";
-import * as API from "/src/utils/apiCalls";
+import * as API from "../../utils/apiCalls";
 import "./CommentForm.scss";
+import { VideoDetail, PostComment, CommentInput } from "../../utils/interfaces";
 
-const CommentForm = ({ currentVideo, fetchVideos }) => {
-  const [comment, setComment] = useState("");
+const CommentForm = ({
+  currentVideo,
+  fetchVideos,
+}: {
+  currentVideo: VideoDetail;
+  fetchVideos: Function;
+}) => {
+  const [comment, setComment] = useState<string>("");
 
-  const postMyComment = async (commentObj) => {
-    const result = await API.postComment({
+  const postMyComment = async (commentObj: CommentInput) => {
+    const result: PostComment = await API.postComment({
       id: currentVideo.id,
       comment: commentObj,
     });
     fetchVideos();
   };
 
-  const handleCommentChange = (event) => {
+  const handleCommentChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setComment(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<EventTarget>) => {
     event.preventDefault();
-    const commentObj = { name: "Fiorella", comment };
+    const commentObj: CommentInput = { name: "Fiorella", comment };
     setComment("");
     postMyComment(commentObj);
   };

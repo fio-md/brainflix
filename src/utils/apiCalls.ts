@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PostComment, DeleteComment, PostVideo } from "./interfaces";
 
 const baseUrl = import.meta.env.VITE_API_URL;
 
@@ -11,18 +12,13 @@ const getAllVideos = async () => {
   }
 };
 
-const getOneVideo = async (id: string) => {
+const getOneVideo = async (id?: string) => {
   try {
     const response = await axios.get(`${baseUrl}videos/${id}`);
     return response.data;
   } catch (e) {
     console.error("Error fetching video details: " + e);
   }
-};
-
-type PostComment = {
-  id: string;
-  comment: string;
 };
 
 const postComment = async ({ id, comment }: PostComment) => {
@@ -37,11 +33,6 @@ const postComment = async ({ id, comment }: PostComment) => {
   }
 };
 
-type DeleteComment = {
-  videoId: string;
-  commentId: string;
-};
-
 const deleteComment = async ({ videoId, commentId }: DeleteComment) => {
   try {
     const response = await axios.delete(
@@ -51,12 +42,6 @@ const deleteComment = async ({ videoId, commentId }: DeleteComment) => {
   } catch (e) {
     console.error(`Error deleting comment with id ${commentId}`);
   }
-};
-
-type PostVideo = {
-  name: string;
-  description: string;
-  image: string;
 };
 
 const postVideo = async (newVid: PostVideo) => {
