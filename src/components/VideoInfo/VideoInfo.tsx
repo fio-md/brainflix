@@ -1,6 +1,7 @@
 import "./VideoInfo.scss";
 import Divider from "../Divider/Divider";
 import { Comment, VideoDetail } from "../../utils/interfaces";
+import { timeAgo } from "../../utils/utils";
 
 const VideoInfo = ({
   currentVideo,
@@ -16,7 +17,7 @@ const VideoInfo = ({
       <div className="info__summary">
         <div className="info__summary-left">
           <h4 className="info__channel">{`By ${currentVideo.channel}`}</h4>
-          <span className="info__date">{timestamp}</span>
+          <span className="info__date">{timeAgo(timestamp)}</span>
         </div>
         <div className="info__summary-right">
           <div className="info__views">{currentVideo.views}</div>
