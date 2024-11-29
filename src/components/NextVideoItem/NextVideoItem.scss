@@ -1,9 +1,13 @@
 @use "/src/styles/partials/global" as *;
 @use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
 
 .next-video {
   display: flex;
   gap: 1rem;
+  &:hover {
+    color: $primary-highlight;
+  }
   &__image {
     height: 3.5rem;
     border-radius: 4px;
